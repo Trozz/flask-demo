@@ -11,3 +11,5 @@ The Flask app has a number of "dummy" endpoints listed below
 /hello/<name>
 ```
 
+## Deploying
+Apply to Kubernetes using the following command `kubectl apply -f kube`
