@@ -19,7 +19,7 @@ spec:
         app.kubernetes.io/name: app
     spec:
       containers:
-      - image: ghcr.io/trozz/equal-experts-test:latest
+      - image: ghcr.io/trozz/flask-demo:latest
         imagePullPolicy: Always
         name: app
         ports:

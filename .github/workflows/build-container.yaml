@@ -22,5 +22,5 @@ jobs:
           platforms: ${{ env.DOCKER_PLATFORMS }}
           push: true
           tags: |
-            ghcr.io/trozz/equal-experts-test:latest
-            ghcr.io/trozz/equal-experts-test:${{ github.sha }}
+            ghcr.io/trozz/flask-demo:latest
+            ghcr.io/trozz/flask-demo:${{ github.sha }}
