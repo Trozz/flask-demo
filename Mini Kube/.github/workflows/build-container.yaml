@@ -1,0 +1,26 @@
+name: Build and publish container
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build docker container
+    runs-on: ubuntu-latest
+    env:
+      DOCKER_PLATFORMS: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: docker/Dockerfile
+          platforms: ${{ env.DOCKER_PLATFORMS }}
+          push: true
+          tags: |
+            ghcr.io/trozz/equal-experts-test:latest
+            ghcr.io/trozz/equal-experts-test:${{ github.sha }}
