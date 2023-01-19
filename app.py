@@ -21,7 +21,7 @@ def health():
 
 @app.route('/hello')
 def hello_base():
-    return 'Hi there'
+    return "Hi there"
 
 @app.route('/hello/<name>')
 def hello(name):
